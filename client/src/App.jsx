@@ -6,7 +6,7 @@ import AuthLayout from "./layout/AuthLayout";
 
 function App() {
   return (
-    <div>
+    <>
       <NavBar />
       <BrowserRouter>
         <Routes>
@@ -14,10 +14,10 @@ function App() {
             <Route index element={<LandingPage />} />
           </Route>
 
-          <Route path="/auth" element={<AuthLayout />} />
+          <Route element={<AuthLayout />}></Route>
         </Routes>
       </BrowserRouter>
-    </div>
+    </>
   );
 }
 

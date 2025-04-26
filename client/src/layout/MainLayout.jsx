@@ -8,7 +8,7 @@ export default function MainLayout() {
       <header>
         <NavBar />
       </header>
-      <main className=" mx-auto py-28 px-4 sm:px-6 lg:px-8 max-w-7xl">
+      <main className="pt-16 bg-background dark:bg-dark-background min-h-screen">
         <Outlet />
       </main>
     </>
