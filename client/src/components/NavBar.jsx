@@ -16,9 +16,9 @@ export default function NavBar() {
     <nav className="w-full fixed top-0 left-0 z-50 text-darkText dark:text-dark-darkText bg-background dark:bg-dark-background shadow-lg dark:shadow-dark-shadowHeavy dark:shadow-md  transition-colors duration-300">
       {/* Upper Banner */}
       <div className="w-full bg-info dark:bg-dark-info  text-center text-xs sm:text-sm py-2 px-4 shadow-md dark:bg-dark.primary">
-        🔥 <span className="font-semibold">50% OFF — Limited Time Only!</span>{" "}
-        Enroll now and get half off any course. Offer ends in 🚀
-        <span className="underline">24 hours</span>!
+        🔥 <span className="font-semibold"> 50% ቅናሽ - የተገደበ ጊዜ ብቻ! </span> አሁን
+        ይመዝገቡ እና ከማንኛውም ኮርስ ግማሽ ያግኙ። ቅናሹ በ{" "}
+        <span className="underline">24 ሰዓታት </span>ውስጥ ያበቃል !🚀
       </div>
 
       {/* Main Navbar Container */}

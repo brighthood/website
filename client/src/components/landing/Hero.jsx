@@ -25,14 +25,13 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient bg-[length:400%_400%] opacity-70 -z-10"></div>
       <div className="relative max-w-4xl z-20">
         <h1 className="text-3xl md:text-5xl text-dark-darkText dark:text-dark-darkText font-extrabold leading-tight mb-4">
-          Unlock your potential. Learn to code, build your dream, and create the
-          life you’ve always imagined.
+          አቅምዎን ይክፈቱ። ኮድ ማድረግን ይማሩ፣ ህልምዎን ይገንቡ እና ሁልጊዜ ያሰቡትን ህይወት ይፍጠሩ።
         </h1>
         <p className="text-lg md:text-xl text-dark-secondaryText dark:text-dark-secondaryText mb-8">
-          The future is yours — it starts now.
+          የወደፊቱ የእርስዎ ነው - አሁን ይጀምራል።
         </p>
         <button className="bg-gradient-to-tr from-primary to-purple-500 text-white font-semibold py-3 px-6 rounded-xl shadow-md hover:bg-accent transition duration-300 animate-bounce">
-          Join Now
+          አሁን ይቀላቀሉ
         </button>
       </div>
     </section>

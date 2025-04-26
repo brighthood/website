@@ -8,44 +8,44 @@ import technology from "./../../assets/images/technology.jpg";
 const reasons = [
   {
     id: 1,
-    title: "Transform Your Future",
+    title: "የወደፊት ሕይወትህን ቀይር",
     description:
-      "Learning to code opens doors you never imagined. This course is your first step toward a career, freedom, and a life full of opportunities.",
+      "ኮድ ማድረግን መማር እርስዎ ያላሰቡትን በሮች ይከፍታል። ይህ ኮርስ ወደ ሙያ፣ ነፃነት እና እድሎች የተሞላ ህይወት የመጀመሪያ እርምጃዎ ነው።",
     image: feature,
   },
   {
     id: 2,
-    title: "Build Your Dreams",
+    title: "ህልሞችዎን ይገንቡ",
     description:
-      "Turn your passion into reality. Whether it's launching a startup, creating an app, or freelancing, coding empowers you to build what you believe in.",
+      "ስሜትዎን ወደ እውነታ ይለውጡ። ጅምር ጅምር፣ አፕ መፍጠርም ሆነ ፍሪላንግ፣ ኮድ ማድረግ የሚያምኑትን እንዲገነቡ ኃይል ይሰጥዎታል።",
     image: Dreams,
   },
   {
     id: 3,
-    title: "Freedom & Flexibility",
+    title: "ነፃነት እና ተለዋዋጭነት",
     description:
-      "Coding skills give you the freedom to work remotely, earn from anywhere, and live life on your terms. No more 9-to-5 limits.",
+      "ኮድ የማድረግ ችሎታ በርቀት ለመስራት፣ ከየትኛውም ቦታ ገቢ ለማግኘት እና በውሎችዎ ህይወት የመኖር ነፃነት ይሰጥዎታል። ከ9-5-5 ገደቦች የሉም።",
     image: Freedom,
   },
   {
     id: 4,
-    title: "Stay Ahead of the Future",
+    title: "ከወደፊቱ ቀድመው ይቆዩ",
     description:
-      "Technology is the future. By learning to code now, you're investing in skills that will always be in demand, no matter how the world changes.",
+      "ቴክኖሎጂ ወደፊት ነው። አሁን ኮድ ማድረግን በመማር፣ አለም ምንም አይነት ለውጥ ቢመጣ ሁልጊዜ ተፈላጊ በሆኑ ክህሎቶች ላይ ኢንቨስት እያደረጉ ነው።",
     image: technology,
   },
   {
     id: 5,
-    title: "Unlock Limitless Creativity",
+    title: "ገደብ የለሽ ፈጠራን ይክፈቱ",
     description:
-      "Coding isn't just technical—it's a creative superpower. Build websites, apps, and experiences that touch lives and make an impact.",
+      "ኮድ መስጠት ቴክኒካል ብቻ አይደለም - የፈጠራ ልዕለ ኃያል ነው። ህይወትን የሚነኩ እና ተፅእኖ የሚፈጥሩ ድር ጣቢያዎችን፣ መተግበሪያዎችን እና ልምዶችን ይገንቡ።",
     image: creativity,
   },
   {
     id: 6,
-    title: "Unlock Limitless Creativity",
+    title: "ገደብ የለሽ ፈጠራን ይክፈቱ",
     description:
-      "Coding isn't just technical—it's a creative superpower. Build websites, apps, and experiences that touch lives and make an impact.",
+      "ኮድ መስጠት ቴክኒካል ብቻ አይደለም - የፈጠራ ልዕለ ኃያል ነው። ህይወትን የሚነኩ እና ተፅእኖ የሚፈጥሩ ድር ጣቢያዎችን፣ መተግበሪያዎችን እና ልምዶችን ይገንቡ።",
     image: creativity,
   },
 ];
@@ -56,34 +56,32 @@ export default function Why() {
       className="max-w-4xl mx-auto px-4 py-8 bg-background dark:bg-dark-background rounded-lg shadow-lg"
       id="Why"
     >
-      <h2 className="text-2xl  sm:text-4xl font-bold text-center mb-8">
-        Why You Need This Course?
+      <h2 className="text-2xl  sm:text-4xl font-bold text-center mb-8 text-darkText dark:text-dark-darkText">
+        ለምን ይህን ትምህርት ያስፈልግዎታል?
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
         {reasons.map((reason) => (
-          <div
+          <motion.li
+            className="bg-surface dark:bg-dark-surface rounded-lg shadow-lg p-6 flex flex-col items-center border border-borderColor dark:border-dark-borderColor   text-center"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
             key={reason.id}
-            className="bg-white dark:bg-dark-background shadow-lg rounded-lg p-6"
           >
-            <motion.li
-              className="bg-white dark:bg-dark-surface rounded-lg shadow-lg p-6 flex flex-col items-center text-center"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
-              <img
-                src={reason.image}
-                alt={reason.title}
-                className="rounded-md mb-4"
-              />
-              <h3 className="text-xl font-bold mb-2">{reason.title}</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                {reason.description}
-              </p>
-            </motion.li>
-          </div>
+            <img
+              src={reason.image}
+              alt={reason.title}
+              className="rounded-md mb-4"
+            />
+            <h3 className="text-xl text-darkText dark:text-dark-darkText font-bold mb-2">
+              {reason.title}
+            </h3>
+            <p className="text-md text-secondaryText  dark:text-dark-secondaryText">
+              {reason.description}
+            </p>
+          </motion.li>
         ))}
       </div>
     </div>
