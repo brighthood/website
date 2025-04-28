@@ -10,7 +10,7 @@ export default function NavBar() {
   const [showMobile, setShowMobile] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
 
-  const navLinks = ["Home", "Why", "Courses", "Price", "Testimonial", "About"];
+  const navLinks = ["Home", "Why", "Courses", "Testimonial", "About"];
 
   return (
     <nav className="w-full fixed top-0 left-0 z-50 text-darkText dark:text-dark-darkText bg-background dark:bg-dark-background shadow-lg dark:shadow-dark-shadowHeavy dark:shadow-md  transition-colors duration-300">
@@ -53,7 +53,7 @@ export default function NavBar() {
             <Button variant="outlined" size="md">
               Log in
             </Button>
-            <Button variant="contained" color="primary" size="md">
+            <Button variant="contained" color="cta" size="md">
               Join Now
             </Button>
           </div>

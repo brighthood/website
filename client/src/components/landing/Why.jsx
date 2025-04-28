@@ -5,6 +5,7 @@ import Dreams from "./../../assets/images/dream.jpg";
 import creativity from "./../../assets/images/creativity.jpg";
 import Freedom from "./../../assets/images/freedom.jpg";
 import technology from "./../../assets/images/technology.jpg";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 const reasons = [
   {
     id: 1,
@@ -53,26 +54,27 @@ const reasons = [
 export default function Why() {
   return (
     <div
-      className="max-w-4xl mx-auto px-4 py-8 bg-background dark:bg-dark-background rounded-lg shadow-lg"
+      className="max-w-6xl mx-auto px-4 py-8 bg-background dark:bg-dark-background rounded-lg "
       id="Why"
     >
       <h2 className="text-2xl  sm:text-4xl font-bold text-center mb-8 text-darkText dark:text-dark-darkText">
         ለምን ይህን ትምህርት ያስፈልግዎታል?
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
         {reasons.map((reason) => (
           <motion.li
-            className="bg-surface dark:bg-dark-surface rounded-lg shadow-lg p-6 flex flex-col items-center border border-borderColor dark:border-dark-borderColor   text-center"
+            className="bg-surface dark:bg-dark-surface rounded-lg shadow-lg p-6 flex flex-col items-center border border-transparent hover:border-primary transition duration-300 text-center"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             key={reason.id}
           >
-            <img
+            <LazyLoadImage
               src={reason.image}
               alt={reason.title}
+              // effect="blur"
               className="rounded-md mb-4"
             />
             <h3 className="text-xl text-darkText dark:text-dark-darkText font-bold mb-2">

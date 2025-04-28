@@ -30,7 +30,7 @@ export default function Hero() {
         <p className="text-lg md:text-xl text-dark-secondaryText dark:text-dark-secondaryText mb-8">
           የወደፊቱ የእርስዎ ነው - አሁን ይጀምራል።
         </p>
-        <button className="bg-gradient-to-tr from-primary to-purple-500 text-white font-semibold py-3 px-6 rounded-xl shadow-md hover:bg-accent transition duration-300 animate-bounce">
+        <button className="bg-gradient-to-tr from-primary to-purple-500 text-white font-semibold py-3 px-6 rounded-xl shadow-md hover:bg-accent transition duration-300 ">
           አሁን ይቀላቀሉ
         </button>
       </div>

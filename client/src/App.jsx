@@ -1,22 +1,26 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import NavBar from "./components/NavBar";
-import MainLayout from "./layout/MainLayout";
-import LandingPage from "./pages/LandingPage";
-import AuthLayout from "./layout/AuthLayout";
+import { lazy, Suspense } from "react";
+import Loading from "./components/ui/Loading";
+const NavBar = lazy(() => import("./components/NavBar"));
+const LandingPage = lazy(() => import("./pages/LandingPage"));
+const MainLayout = lazy(() => import("./layout/MainLayout"));
+const AuthLayout = lazy(() => import("./layout/AuthLayout"));
 
 function App() {
   return (
     <>
-      <NavBar />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<MainLayout />}>
-            <Route index element={<LandingPage />} />
-          </Route>
+      <Suspense fallback={<Loading />}>
+        <NavBar />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<MainLayout />}>
+              <Route index element={<LandingPage />} />
+            </Route>
 
-          <Route element={<AuthLayout />}></Route>
-        </Routes>
-      </BrowserRouter>
+            <Route element={<AuthLayout />}></Route>
+          </Routes>
+        </BrowserRouter>
+      </Suspense>
     </>
   );
 }
