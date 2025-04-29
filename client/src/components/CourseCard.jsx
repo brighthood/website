@@ -24,22 +24,6 @@ export default function CourseCard({ course }) {
         </ul>
       </div>
 
-      <div>
-        <h3 className="text-lg font-semibold text-darkText dark:text-white mb-2">
-          Highlights:
-        </h3>
-        <ul className="list-disc list-inside space-y-1">
-          {course.highlights.map((highlight, index) => (
-            <li
-              key={index}
-              className="text-secondaryText dark:text-dark-secondaryText"
-            >
-              {highlight}
-            </li>
-          ))}
-        </ul>
-      </div>
-
       <button className="mt-auto bg-gradient-to-tr from-primary to-purple-500 text-white py-2 px-4 rounded-lg font-semibold hover:opacity-90 transition">
         {course.joinNowText}
       </button>
