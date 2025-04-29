@@ -1,11 +1,10 @@
 import React from "react";
-import { motion } from "framer-motion";
 import feature from "./../../assets/images/feature.jpg";
 import Dreams from "./../../assets/images/dream.jpg";
 import creativity from "./../../assets/images/creativity.jpg";
 import Freedom from "./../../assets/images/freedom.jpg";
 import technology from "./../../assets/images/technology.jpg";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import ReasonCard from "../ReasonCard";
 const reasons = [
   {
     id: 1,
@@ -60,30 +59,9 @@ export default function Why() {
       <h2 className="text-2xl  sm:text-4xl font-bold text-center mb-8 text-darkText dark:text-dark-darkText">
         ለምን ይህን ትምህርት ያስፈልግዎታል?
       </h2>
-
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
         {reasons.map((reason) => (
-          <motion.li
-            className="bg-surface dark:bg-dark-surface rounded-lg shadow-lg p-6 flex flex-col items-center border border-transparent hover:border-primary transition duration-300 text-center"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            key={reason.id}
-          >
-            <LazyLoadImage
-              src={reason.image}
-              alt={reason.title}
-              // effect="blur"
-              className="rounded-md mb-4"
-            />
-            <h3 className="text-xl text-darkText dark:text-dark-darkText font-bold mb-2">
-              {reason.title}
-            </h3>
-            <p className="text-md text-secondaryText  dark:text-dark-secondaryText">
-              {reason.description}
-            </p>
-          </motion.li>
+          <ReasonCard reason={reason} key={reason.id} />
         ))}
       </div>
     </div>

@@ -4,13 +4,13 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import Button from "./ui/Button";
 import { MdOutlineWbSunny, MdModeNight } from "react-icons/md";
-import useDarkMode from "../hooks/useDarkMode";
+// import useDarkMode from "../hooks/useDarkMode";
 
 export default function NavBar() {
   const [showMobile, setShowMobile] = useState(false);
-  const { isDarkMode, toggleDarkMode } = useDarkMode();
+  // const { isDarkMode, toggleDarkMode } = useDarkMode();
 
-  const navLinks = ["Home", "Why", "Courses", "Testimonial", "About"];
+  const navLinks = ["Home", "Why", "Courses", "Testimonial"];
 
   return (
     <nav className="w-full fixed top-0 left-0 z-50 text-darkText dark:text-dark-darkText bg-background dark:bg-dark-background shadow-lg dark:shadow-dark-shadowHeavy dark:shadow-md  transition-colors duration-300">
@@ -40,13 +40,13 @@ export default function NavBar() {
           ))}
 
           {/* Theme Toggle */}
-          <div onClick={toggleDarkMode} className="size-5 cursor-pointer">
+          {/* <div onClick={toggleDarkMode} className="size-5 cursor-pointer">
             {isDarkMode ? (
               <MdOutlineWbSunny className="text-xl font-bold" />
             ) : (
               <MdModeNight className="text-xl font-bold" />
             )}
-          </div>
+          </div> */}
 
           {/* Auth Buttons */}
           <div className="flex gap-2">
@@ -65,13 +65,13 @@ export default function NavBar() {
           onClick={() => setShowMobile(!showMobile)}
         >
           {/* Theme Toggle */}
-          <div onClick={toggleDarkMode} className="size-5 cursor-pointer">
+          {/* <div onClick={toggleDarkMode} className="size-5 cursor-pointer">
             {isDarkMode ? (
               <MdOutlineWbSunny className="text-xl font-bold" />
             ) : (
               <MdModeNight className="text-xl font-bold" />
             )}
-          </div>
+          </div> */}
           {showMobile ? <IoMdClose /> : <GiHamburgerMenu />}
         </div>
       </div>
