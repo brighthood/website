@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  FaFacebookF,
+  FaTelegram,
   FaTwitter,
   FaLinkedinIn,
   FaInstagram,
@@ -29,18 +29,18 @@ export default function Footer() {
               </a>
             </li>
             <li>
+              <a href="#Why" className="hover:text-white">
+                Why
+              </a>
+            </li>
+            <li>
               <a href="#courses" className="hover:text-white">
                 Courses
               </a>
             </li>
             <li>
-              <a href="#about" className="hover:text-white">
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="hover:text-white">
-                Contact
+              <a href="#Testimonial" className="hover:text-white">
+                Testimonials
               </a>
             </li>
           </ul>
@@ -56,7 +56,7 @@ export default function Footer() {
               rel="noreferrer"
               className="hover:text-white transition"
             >
-              <FaFacebookF size={20} />
+              <FaTelegram size={20} />
             </a>
             <a
               href="https://twitter.com"
@@ -64,7 +64,7 @@ export default function Footer() {
               rel="noreferrer"
               className="hover:text-white transition"
             >
-              <FaTwitter size={20} />
+              <FaLinkedinIn size={20} />
             </a>
             <a
               href="https://linkedin.com"
@@ -72,7 +72,7 @@ export default function Footer() {
               rel="noreferrer"
               className="hover:text-white transition"
             >
-              <FaLinkedinIn size={20} />
+              <FaTwitter size={20} />
             </a>
             <a
               href="https://instagram.com"

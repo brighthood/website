@@ -42,7 +42,10 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="bg-white dark:bg-dark-background py-16 overflow-hidden ">
+    <section
+      className="bg-white dark:bg-dark-background py-16 overflow-hidden "
+      id="Testimonial"
+    >
       <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-10">
         What Our Students Say
       </h2>
