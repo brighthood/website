@@ -10,7 +10,7 @@ export default function NavBar() {
   const [showMobile, setShowMobile] = useState(false);
   // const { isDarkMode, toggleDarkMode } = useDarkMode();
 
-  const navLinks = ["Home", "Why", "Courses", "Testimonial"];
+  const navLinks = ["Home", "Why", "Courses", "Testimonial", "FAQ"];
 
   return (
     <nav className="w-full fixed top-0 left-0 z-50 text-darkText dark:text-dark-darkText bg-background dark:bg-dark-background shadow-lg dark:shadow-dark-shadowHeavy dark:shadow-md  transition-colors duration-300">

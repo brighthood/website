@@ -34,7 +34,7 @@ const courses = [
 
 export default function Courses() {
   return (
-    <div>
+    <div id="Courses">
       <h2 className="text-2xl sm:text-4xl font-bold text-center mb-8 text-darkText dark:text-dark-darkText">
         የኮርስ ዝርዝር
       </h2>
