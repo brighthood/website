@@ -1,15 +1,22 @@
 const express = require("express");
 const dotenv = require("dotenv");
-dotenv.config({path:""})
-
 const userRoute = require("./routes/userRoute");
 const authRoute = require("./routes/authRoute");
+const globalErrorHandler = require("./controller/errorControllers");
+const AppError = require("./utils/appError");
+dotenv.config({ path: ".env" });
 
 const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/users", userRoute);
+
+// app.all("*", (req, res, next) => {
+//   next(new AppError(`cant find ${req.originalUrl} on this server`, 404));
+// });
+
+app.use(globalErrorHandler);
 
 module.exports = app;

@@ -5,5 +5,5 @@ const Db = require("./config/db");
 Db.Db;
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
-  console.log("server started at port 5000🚀");
+  console.log(`server started at port ${port}🚀`);
 });
