@@ -7,6 +7,9 @@ const signtoken = (id) => {
   const token = jwt.sign({ id }, process.env.JWTSECRETEKEY);
   return token;
 };
+const varifytoken = (token) => {
+  return jwt.verify(token, process.env.JWTSECRETEKEY);
+};
 
 exports.signup = catchAsync(async (req, res, next) => {
   const { name, email, password, confirmPassword, school, phonenumber } =
@@ -41,15 +44,43 @@ exports.login = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: "success",
     token,
+    user,
   });
 });
 exports.logout = catchAsync((req, res, next) => {
+  res.cookie("jwt", "loggedout", {
+    expires: new Date(Date.now() + 10 * 1000),
+    httpOnly: true,
+  });
+  res.clearCookie("jwt", { path: "/" });
   res.status(200).json({
     status: "success",
-    message: "hello from the logout route",
+    message: "You have successfully logged out.",
   });
 });
 exports.protect = catchAsync(async (req, res, next) => {
-  console.log(req.headers.cookie.jwt);
+  const token = req.cookies.jwt;
+  if (!token) {
+    return next(
+      new AppError("You are not logged in! Please log in to get access.", 401)
+    );
+  }
+  const decoded = varifytoken(token);
+  req.user = await User.findById(decoded.id);
+  if (!req.user) {
+    return next(
+      new AppError("The user belonging to this token no longer exists.", 401)
+    );
+  }
   next();
 });
+exports.restrictTo = (...role) => {
+  return (req, res, next) => {
+    if (!role.includes(req.user.role)) {
+      return next(
+        new AppError("You do not have permission to perform this action", 403)
+      );
+    }
+    next();
+  };
+};
