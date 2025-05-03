@@ -8,12 +8,12 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white px-6 py-10">
+    <footer className="bg-background dark:bg-dark-background text-darkText dark:text-dark-darkText px-6 py-10">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8">
         {/* Logo & Description */}
         <div>
           <h2 className="text-2xl font-bold mb-2">BrightHood</h2>
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-darkText dark:text-dark-darkText">
             Empowering Ethiopia’s youth with tech skills and real-world
             development experience.
           </p>
@@ -22,24 +22,24 @@ export default function Footer() {
         {/* Quick Links */}
         <div>
           <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-          <ul className="space-y-2 text-sm text-gray-300">
+          <ul className="space-y-2 text-sm text-secondaryText dark:text-dark-secondaryText">
             <li>
-              <a href="#home" className="hover:text-white">
+              <a href="#home" className="hover:text-dark-tertiaryText">
                 Home
               </a>
             </li>
             <li>
-              <a href="#Why" className="hover:text-white">
+              <a href="#Why" className="hover:text-dark-tertiaryText">
                 Why
               </a>
             </li>
             <li>
-              <a href="#courses" className="hover:text-white">
+              <a href="#courses" className="hover:text-dark-tertiaryText">
                 Courses
               </a>
             </li>
             <li>
-              <a href="#Testimonial" className="hover:text-white">
+              <a href="#Testimonial" className="hover:text-dark-tertiaryText">
                 Testimonials
               </a>
             </li>
@@ -49,12 +49,12 @@ export default function Footer() {
         {/* Social Links */}
         <div>
           <h3 className="text-xl font-semibold mb-4">Follow Us</h3>
-          <div className="flex gap-4 text-gray-400">
+          <div className="flex gap-4 text-secondaryText dark:text-dark-secondaryText">
             <a
               href="https://facebook.com"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-white transition"
+              className="hover:text-dark-tertiaryText"
             >
               <FaTelegram size={20} />
             </a>
@@ -62,7 +62,7 @@ export default function Footer() {
               href="https://twitter.com"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-white transition"
+              className="hover:text-dark-tertiaryText"
             >
               <FaLinkedinIn size={20} />
             </a>
@@ -70,7 +70,7 @@ export default function Footer() {
               href="https://linkedin.com"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-white transition"
+              className="hover:text-dark-tertiaryText"
             >
               <FaTwitter size={20} />
             </a>
@@ -78,7 +78,7 @@ export default function Footer() {
               href="https://instagram.com"
               target="_blank"
               rel="noreferrer"
-              className="hover:text-white transition"
+              className="hover:text-dark-tertiaryText"
             >
               <FaInstagram size={20} />
             </a>
@@ -87,8 +87,8 @@ export default function Footer() {
       </div>
 
       {/* Footer Bottom */}
-      <div className="text-center text-sm text-gray-500 mt-10 border-t border-gray-700 pt-4">
-        &copy; {new Date().getFullYear()} CodeEthiopia. All rights reserved.
+      <div className="text-center text-sm text-secondaryText dark:text-dark-secondaryText mt-10 border-t border-gray-700 pt-4">
+        &copy; {new Date().getFullYear()} BrightHood. All rights reserved.
       </div>
     </footer>
   );

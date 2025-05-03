@@ -44,7 +44,6 @@ exports.login = catchAsync(async (req, res, next) => {
   res.status(200).json({
     status: "success",
     token,
-    user,
   });
 });
 exports.logout = catchAsync((req, res, next) => {
@@ -59,6 +58,7 @@ exports.logout = catchAsync((req, res, next) => {
   });
 });
 exports.protect = catchAsync(async (req, res, next) => {
+  // console.log(require("crypto").randomUUID().toString("hex"));
   const token = req.cookies.jwt;
   if (!token) {
     return next(
@@ -74,6 +74,7 @@ exports.protect = catchAsync(async (req, res, next) => {
   }
   next();
 });
+
 exports.restrictTo = (...role) => {
   return (req, res, next) => {
     if (!role.includes(req.user.role)) {

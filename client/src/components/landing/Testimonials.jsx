@@ -43,10 +43,10 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section
-      className="bg-white dark:bg-dark-background py-16 overflow-hidden "
+      className="bg-background dark:bg-dark-background py-16 overflow-hidden "
       id="Testimonial"
     >
-      <h2 className="text-3xl font-bold text-center text-gray-800 dark:text-white mb-10">
+      <h2 className="text-2xl sm:text-3xl font-bold text-center text-darkText dark:text-dark-darkText mb-10">
         What Our Students Say
       </h2>
       <div className="w-full overflow-hidden relative">
@@ -54,7 +54,7 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <div
               key={i}
-              className="min-w-[300px] max-w-sm bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-lg"
+              className="min-w-[300px] max-w-sm bg-surface dark:bg-dark-surface p-6 rounded-xl shadow-lg"
             >
               <div className="flex items-center gap-4 mb-4">
                 <img
@@ -63,15 +63,17 @@ export default function Testimonials() {
                   className="w-12 h-12 rounded-full"
                 />
                 <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-white">
+                  <h4 className="font-semibold text-darkText dark:text-dark-darkText">
                     {t.name}
                   </h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-300">
+                  <p className="text-sm text-secondaryText dark:text-dark-secondaryText">
                     {t.role}
                   </p>
                 </div>
               </div>
-              <p className="text-gray-700 dark:text-gray-200">{t.message}</p>
+              <p className="text-darkText dark:text-dark-darkText">
+                {t.message}
+              </p>
             </div>
           ))}
         </div>

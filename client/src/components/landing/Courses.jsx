@@ -35,8 +35,8 @@ const courses = [
 export default function Courses() {
   return (
     <div id="Courses">
-      <h2 className="text-2xl sm:text-4xl font-bold text-center mb-8 text-darkText dark:text-dark-darkText">
-        የኮርስ ዝርዝር
+      <h2 className="text-2xl sm:text-4xl font-bold text-center sm:mb-8 text-darkText dark:text-dark-darkText">
+        Course List
       </h2>
 
       <div className="max-w-7xl mx-auto px-4 py-8 bg-background dark:bg-dark-background rounded-lg">
