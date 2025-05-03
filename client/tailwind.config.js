@@ -45,8 +45,8 @@ export default {
 
         // Dark Mode
         dark: {
-          background: "#0F172A", // dark slate
-          surface: "#1E293B", // dark gray-blue
+          background: "#25274d", // dark slate
+          surface: "#0F0E47 ", // dark gray-blue
           primary: "#3B82F6", // blue
           accent: "#818CF8", // lighter indigo
           darkText: "#F1F5F9", // light text

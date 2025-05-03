@@ -29,9 +29,9 @@ const categories = [
 
 export default function WhatYouWillBuild() {
   return (
-    <section className="bg-gray-100 dark:bg-gray-900 py-16 px-6">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-12">
+    <section className="bg-background dark:bg-dark-background  sm:py-14 px-4">
+      <div className="max-w-5xl mx-auto text-center">
+        <h2 className=" text-xl sm:text-3xl font-bold text-gray-800 dark:text-white mb-12">
           What You'll Build With Us
         </h2>
 
@@ -39,13 +39,13 @@ export default function WhatYouWillBuild() {
           {categories.map((cat, index) => (
             <div
               key={index}
-              className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 md:p-8 flex flex-col md:flex-row items-center text-left"
+              className="bg-surface dark:bg-dark-surface rounded-xl shadow-md p-6 md:p-8 flex flex-col md:flex-row items-center text-left"
             >
               <div className="md:w-1/2 mb-6 md:mb-0 md:pr-8">
-                <h3 className="text-2xl font-bold text-primary mb-4">
+                <h3 className="text-xl font-bold text-primary mb-4">
                   {cat.title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300">
+                <p className="text-secondaryText dark:text-dark-secondaryText text-md">
                   {cat.description}
                 </p>
               </div>

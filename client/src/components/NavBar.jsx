@@ -4,6 +4,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import Button from "./ui/Button";
 import { MdOutlineWbSunny, MdModeNight } from "react-icons/md";
+import { Link } from "react-router";
 // import useDarkMode from "../hooks/useDarkMode";
 
 export default function NavBar() {
@@ -13,27 +14,27 @@ export default function NavBar() {
   const navLinks = ["Home", "Why", "Courses", "Testimonial", "FAQ"];
 
   return (
-    <nav className="w-full fixed top-0 left-0 z-50 text-darkText dark:text-dark-darkText bg-background dark:bg-dark-background shadow-lg dark:shadow-dark-shadowHeavy dark:shadow-md  transition-colors duration-300">
+    <nav className="w-full fixed top-0 left-0 z-50 text-darkText dark:text-dark-darkText bg-background dark:bg-dark-background  shadow-lg dark:shadow-dark-shadowHeavy dark:shadow-lg  transition-colors duration-300">
       {/* Upper Banner */}
-      <div className="w-full bg-info dark:bg-dark-info  text-center text-xs sm:text-sm py-2 px-4 shadow-md dark:bg-dark.primary">
+      <div className="w-full bg-dark-info dark:bg-dark-info  text-center text-xs sm:text-xs py-2 px-4 shadow-md ">
         🔥 <span className="font-semibold"> 50% ቅናሽ - የተገደበ ጊዜ ብቻ! </span> አሁን
         ይመዝገቡ እና ከማንኛውም ኮርስ ግማሽ ያግኙ። ቅናሹ በ{" "}
         <span className="underline">24 ሰዓታት </span>ውስጥ ያበቃል !🚀
       </div>
 
       {/* Main Navbar Container */}
-      <div className="max-w-7xl mx-auto px-3 py-3 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-2 py-3 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
           <Logo />
         </div>
 
         {/* Desktop Navigation */}
-        <ul className="hidden sm:flex items-center gap-6 font-medium">
+        <ul className="hidden sm:flex items-center gap-5 font-medium">
           {navLinks.map((link) => (
             <li
               key={link}
-              className="hover:text-primary dark:hover:text-dark-primary cursor-pointer transition"
+              className="hover:text-primary text-sm dark:hover:text-dark-primary cursor-pointer transition"
             >
               <a href={`#${link}`}>{link}</a>
             </li>
@@ -53,9 +54,11 @@ export default function NavBar() {
             <Button variant="outlined" size="md">
               Log in
             </Button>
-            <Button variant="contained" color="cta" size="md">
-              Join Now
-            </Button>
+            <Link to="/signup">
+              <Button variant="contained" color="cta" size="md">
+                Get Started
+              </Button>
+            </Link>
           </div>
         </ul>
 
@@ -91,9 +94,11 @@ export default function NavBar() {
             <Button variant="outlined" size="sm">
               Log in
             </Button>
-            <Button variant="contained" color="primary" size="md">
-              Get Started
-            </Button>
+            <Link to="/signup">
+              <Button variant="contained" color="primary" size="md">
+                Get Started
+              </Button>
+            </Link>
           </div>
         </div>
       )}

@@ -1,22 +1,25 @@
 import React from "react";
+import Button from "./ui/Button";
 
 export default function CourseCard({ course }) {
   return (
-    <div className="bg-white dark:bg-dark-background rounded-2xl shadow-lg my-3 p-6 flex flex-col gap-4 border border-transparent hover:border-primary transition duration-300">
-      <h2 className="text-2xl font-bold text-primary dark:text-white">
+    <div className="bg-surface dark:bg-dark-surface rounded-lg shadow-lg my-3 p-6 flex flex-col gap-4 border border-transparent hover:border-primary transition duration-300">
+      <h2 className="text-lg font-bold text-primary dark:text-dark-primary">
         {course.title}
       </h2>
-      <p className="text-gray-600 dark:text-gray-300">{course.description}</p>
+      <p className="text-secondaryText dark:text-dark-secondaryText text-sm">
+        {course.description}
+      </p>
 
       <div>
-        <h3 className="text-lg font-semibold text-darkText dark:text-white mb-2">
+        <h3 className="text-md font-semibold text-darkText dark:text-white mb-2">
           Frameworks & Tools:
         </h3>
         <ul className="list-disc list-inside space-y-1">
           {course.frameworks.map((framework, index) => (
             <li
               key={index}
-              className="text-secondaryText dark:text-dark-secondaryText"
+              className="text-secondaryText dark:text-dark-secondaryText text-sm"
             >
               {framework}
             </li>
@@ -24,9 +27,9 @@ export default function CourseCard({ course }) {
         </ul>
       </div>
 
-      <button className="mt-auto bg-gradient-to-tr from-primary to-purple-500 text-white py-2 px-4 rounded-lg font-semibold hover:opacity-90 transition">
+      <Button color="cta" size="sm" className="mt-auto font-semibold ">
         {course.joinNowText}
-      </button>
+      </Button>
     </div>
   );
 }

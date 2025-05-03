@@ -53,10 +53,10 @@ const reasons = [
 export default function Why() {
   return (
     <div
-      className="max-w-6xl mx-auto px-4 py-8 bg-background dark:bg-dark-background rounded-lg "
+      className="max-w-5xl mx-auto px-4 py-10 bg-background dark:bg-dark-background rounded-lg "
       id="Why"
     >
-      <h2 className="text-2xl  sm:text-4xl font-bold text-center mb-8 text-darkText dark:text-dark-darkText">
+      <h2 className=" text-xl  sm:text-3xl font-bold text-center mb-8 text-darkText dark:text-dark-darkText">
         ለምን ይህን ትምህርት ያስፈልግዎታል?
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">

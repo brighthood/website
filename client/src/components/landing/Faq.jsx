@@ -37,25 +37,25 @@ export default function Faq() {
 
   return (
     <section
-      className="max-w-4xl mx-auto py-16 px-6 bg-gray-50 dark:bg-gray-900"
+      className="max-w-4xl mx-auto py-16 px-6 bg-background dark:bg-dark-background"
       id="FAQ"
     >
-      <h2 className="text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">
+      <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10 text-gray-800 dark:text-white">
         Frequently Asked Questions
       </h2>
       <div className="space-y-4">
         {faqs.map((faq, index) => (
           <div
             key={index}
-            className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 cursor-pointer transition hover:shadow-lg"
+            className="bg-surface dark:bg-dark-surface rounded-lg shadow-md p-6 cursor-pointer transition hover:shadow-lg"
             onClick={() => toggleFaq(index)}
           >
-            <h3 className="text-lg font-semibold text-dark-darkText flex justify-between items-center">
+            <h3 className="text-sm sm:text-base font-semibold text-dark-darkText flex justify-between items-center">
               {faq.question}
               <span>{openIndex === index ? "−" : "+"}</span>
             </h3>
             {openIndex === index && (
-              <p className="text-gray-700 dark:text-gray-300 mt-3">
+              <p className="text-secondaryText text-sm dark:text-dark-secondaryText mt-3">
                 {faq.answer}
               </p>
             )}

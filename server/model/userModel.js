@@ -3,12 +3,12 @@ const validator = require("validator");
 const bcrypt = require("bcrypt");
 
 const UserSchema = new mongoose.Schema({
-  name: {
+  Name: {
     type: String,
     required: [true, "Please provide a name"],
     minLength: [3, "name must be at least 4 character"],
   },
-  email: {
+  Email: {
     type: String,
     required: [true, "please provide an email"],
     validate: [
@@ -16,7 +16,7 @@ const UserSchema = new mongoose.Schema({
     ],
     unique: true,
   },
-  password: {
+  Password: {
     type: String,
     required: [true, "please provide a password"],
     select: false,
@@ -40,10 +40,10 @@ const UserSchema = new mongoose.Schema({
     },
     default: "user",
   },
-  school: {
+  School: {
     type: String,
   },
-  phonenumber: {
+  Phone: {
     type: Number,
     required: [true, "please provide phone number"],
     min: [13, "phone number is too short"],

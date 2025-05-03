@@ -8,7 +8,7 @@ export default function MainLayout() {
       <header>
         <NavBar />
       </header>
-      <main className="pt-16 bg-background dark:bg-dark-background min-h-screen">
+      <main className="pt-16 bg-background dark:bg-dark-background min-h-dvh">
         <Outlet />
       </main>
     </>
