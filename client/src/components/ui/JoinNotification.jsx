@@ -1,40 +1,39 @@
 import React, { useEffect, useState } from "react";
-
+const ethiopianNames = [
+  "Mekdes",
+  "Abel",
+  "Selam",
+  "Kalkidan",
+  "Yonas",
+  "Ruth",
+  "Abraham",
+  "Lily",
+  "Nahom",
+  "Mahi",
+  "Helina",
+  "Samuel",
+  "Hanna",
+  "Mikiyas",
+  "Rahel",
+  "Biniyam",
+  "Sara",
+  "Henok",
+  "Bethel",
+  "Amanuel",
+  "Meron",
+  "Kidus",
+  "Saron",
+  "Brook",
+  "Yeshi",
+  "Netsanet",
+  "Ephrem",
+  "Rediet",
+  "Biruk",
+];
+const randomName =
+  ethiopianNames[Math.floor(Math.random() * ethiopianNames.length)];
 export default function JoinNotification() {
   const [show, setShow] = useState(false);
-  const ethiopianNames = [
-    "Mekdes",
-    "Abel",
-    "Selam",
-    "Kalkidan",
-    "Yonas",
-    "Ruth",
-    "Abraham",
-    "Lily",
-    "Nahom",
-    "Mahi",
-    "Helina",
-    "Samuel",
-    "Hanna",
-    "Mikiyas",
-    "Rahel",
-    "Biniyam",
-    "Sara",
-    "Henok",
-    "Bethel",
-    "Amanuel",
-    "Meron",
-    "Kidus",
-    "Saron",
-    "Brook",
-    "Yeshi",
-    "Netsanet",
-    "Ephrem",
-    "Rediet",
-    "Biruk",
-  ];
-  const randomName =
-    ethiopianNames[Math.floor(Math.random() * ethiopianNames.length)];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -52,7 +51,7 @@ export default function JoinNotification() {
   if (!show) return null;
 
   return (
-    <div className="fixed  top-32 right-5 bg-accent dark:bg-dark-accent shadow-lg rounded-lg p-1 flex items-center gap-4 animate-fade-in-out z-[9999]">
+    <div className="fixed  top-32 right-5 bg-accent dark:bg-dark-accent shadow-lg rounded-lg p-2 flex items-center gap-4 animate-fade-in-out z-[9999]">
       <div className="size-10 bg-primary rounded-full flex items-center justify-center text-white font-bold">
         🎉
       </div>
