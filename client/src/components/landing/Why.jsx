@@ -56,8 +56,8 @@ export default function Why() {
       className="max-w-5xl mx-auto px-4 py-10 bg-background dark:bg-dark-background rounded-lg "
       id="Why"
     >
-      <h2 className=" text-xl  sm:text-3xl font-bold text-center mb-8 text-darkText dark:text-dark-darkText">
-        ለምን ይህን ትምህርት ያስፈልግዎታል?
+      <h2 className=" text-xl  sm:text-3xl font-bold text-center mb-8 text-darkText  dark:text-dark-darkText">
+        Why do you need this Course ?
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
         {reasons.map((reason) => (

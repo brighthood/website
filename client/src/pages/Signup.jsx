@@ -1,18 +1,73 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as Yup from "yup";
+
 import Button from "../components/ui/Button";
 import Input from "../components/ui/Input";
 import { Link } from "react-router-dom";
 
+const schema = Yup.object().shape({
+  Name: Yup.string()
+    .required("Full name is required")
+    .min(2, "Name must be at least 2 characters"),
+
+  Email: Yup.string()
+    .email("Invalid email format")
+    .required("Email is required"),
+
+  School: Yup.string()
+    .required("School name is required")
+    .min(2, "School name must be at least 2 characters"),
+
+  Phone: Yup.string()
+    .matches(/^[0-9]{10}$/, "Phone number must be 10 digits")
+    .required("Phone number is required"),
+
+  Password: Yup.string()
+    .required("Password is required")
+    .min(6, "Password must be at least 6 characters"),
+
+  confirmPassword: Yup.string()
+    .oneOf([Yup.ref("Password"), null], "Passwords must match")
+    .required("Please confirm your password"),
+});
+
 export default function Signup() {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
   const onSubmit = (data) => console.log(data);
   const formfilds = [
-    { name: "Name", type: "text", placeholder: "Full Name" },
-    { name: "Email", type: "email", placeholder: "Email Adress" },
-    { name: "School", type: "text", placeholder: "School Name" },
-    { name: "Phone", type: "tel", placeholder: "Phone Number" },
-    { name: "Password", type: "password", placeholder: " Password" },
+    {
+      name: "Name",
+      type: "text",
+      placeholder: "Full Name",
+    },
+    {
+      name: "Email",
+      type: "email",
+      placeholder: "Email Adress",
+    },
+    {
+      name: "School",
+      type: "text",
+      placeholder: "School Name",
+    },
+    {
+      name: "Phone",
+      type: "tel",
+      placeholder: "Phone Number",
+    },
+    {
+      name: "Password",
+      type: "password",
+      placeholder: " Password",
+    },
     {
       name: "confirmPassword",
       type: "password",
@@ -36,10 +91,12 @@ export default function Signup() {
 
       {formfilds.map((field) => (
         <Input
+          key={field.name}
           type={field.type}
           placeholder={field.placeholder}
           register={register}
           name={field.name}
+          errors={errors}
         />
       ))}
 

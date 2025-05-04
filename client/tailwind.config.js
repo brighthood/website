@@ -45,10 +45,10 @@ export default {
 
         // Dark Mode
         dark: {
-          background: "#25274d", // dark slate
+          background: "#0c141d", // dark slate
           surface: "#0F0E47 ", // dark gray-blue
           primary: "#3B82F6", // blue
-          accent: "#818CF8", // lighter indigo
+          accent: "#6366F1", // lighter indigo
           darkText: "#F1F5F9", // light text
           secondaryText: "#94A3B8", // gray for body
           tertiaryText: "#64748B", // subtle gray for less focus
@@ -57,7 +57,7 @@ export default {
           success: "#22C55E", // green
           warning: "#FBBF24", // yellow
           danger: "#F87171", // light red
-          info: "#60A5FA", // lighter blue
+          info: "#3B82F6", // lighter blue
 
           // Shadows
           shadowLight: "0px 1px 3px rgba(255, 255, 255, 0.05)",

@@ -14,7 +14,7 @@ export default function NavBar() {
   const navLinks = ["Home", "Why", "Courses", "Testimonial", "FAQ"];
 
   return (
-    <nav className="w-full fixed top-0 left-0 z-50 text-darkText dark:text-dark-darkText bg-background dark:bg-dark-background  shadow-lg dark:shadow-dark-shadowHeavy dark:shadow-lg  transition-colors duration-300">
+    <nav className="w-full  fixed top-0 left-0 z-50 text-darkText dark:text-dark-darkText bg-background dark:bg-dark-background  shadow-lg dark:shadow-dark-shadowHeavy dark:shadow-lg  transition-colors duration-300">
       {/* Upper Banner */}
       <div className="w-full bg-dark-info dark:bg-dark-info  text-center text-xs sm:text-xs py-2 px-4 shadow-md ">
         🔥 <span className="font-semibold"> 50% ቅናሽ - የተገደበ ጊዜ ብቻ! </span> አሁን
@@ -23,7 +23,7 @@ export default function NavBar() {
       </div>
 
       {/* Main Navbar Container */}
-      <div className="max-w-7xl mx-auto px-2 py-3 flex items-center justify-between">
+      <div className="max-w-7xl  mx-auto px-2 py-3 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
           <Logo />

@@ -5,7 +5,7 @@ import Button from "../ui/Button";
 export default function Hero() {
   return (
     <section
-      className="relative h-[90vh] flex flex-col justify-center items-center text-center px-6 overflow-hidden bg-dark-background dark:bg-dark-surface transition-all duration-300"
+      className="relative h-[90vh] flex flex-col justify-center items-center text-center px-6 overflow-hidden bg-dark-background dark:bg-dark-surface bg-blend-multiply transition-all duration-300"
       id="Home"
     >
       {/* Video Background */}
@@ -21,11 +21,11 @@ export default function Hero() {
       </video>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-background dark:bg-dark-background bg-opacity-50 z-10"></div>
+      {/* <div className="absolute inset-0 bg-background dark:bg-dark-background bg-opacity-50 z-10"></div> */}
       {/* Hero Content */}
       {/* <div className="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-gradient bg-[length:400%_400%] opacity-70 -z-10"></div> */}
       <div className="relative max-w-4xl z-20">
-        <h1 className="text-2xl md:text-4xl text-dark-darkText dark:text-dark-darkText font-extrabold leading-tight mb-4">
+        <h1 className="text-2xl md:text-4xl text-dark-darkText dark:text-dark-darkText font-black leading-tight mb-4">
           Unlock your potential. Learn to code, build your dreams, and create
           the life you've always imagined.
         </h1>
