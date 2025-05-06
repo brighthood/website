@@ -1,28 +1,23 @@
+import { Benefit } from "@/components/landing/Benefit";
+import { Faq } from "@/components/landing/Faq";
+import { Footer } from "@/components/landing/Footer";
+import { Hero } from "@/components/landing/Hero";
+import { Testimonial } from "@/components/landing/Testimonials";
+import { WhatYouBuild } from "@/components/landing/WhatYouBuild";
+import { Why } from "@/components/landing/Why";
 import React from "react";
-import Hero from "../components/landing/Hero";
-import Why from "../components/landing/Why";
-import JoinNotification from "../components/ui/JoinNotification";
-import Courses from "../components/landing/Courses.js";
-import Testimonials from "../components/landing/Testimonials";
-import Benefits from "../components/landing/Benefits.js";
-import Footer from "../components/landing/Footer";
-import WhatYouWillBuild from "../components/landing/WhatYouWillBuild";
-import DialButton from "../components/ui/DialButton";
-import Faq from "../components/landing/Faq";
+
 
 export default function LandingPage() {
   return (
     <>
-      <JoinNotification />
       <Hero />
       <Why />
-      <Courses />
-      <WhatYouWillBuild />
-      <Testimonials />
-      <Benefits />
-      <Faq />
+      <Benefit />
+      <WhatYouBuild />
+      <Testimonial />
+      <Faq heading={""} description={""} supportHeading={""} supportDescription={""} supportButtonText={""} supportButtonUrl={""} />
       <Footer />
-      <DialButton />
     </>
   );
 }
