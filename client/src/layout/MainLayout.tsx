@@ -1,14 +1,14 @@
 import React from "react";
-import NavBar from "../components/NavBar";
 import { Outlet } from "react-router-dom";
+import { Navbar } from "@/components/landing/NavBar"
 
 export default function MainLayout() {
   return (
     <>
       <header>
-        <NavBar />
+        <Navbar />
       </header>
-      <main className="pt-16 bg-background dark:bg-dark-background min-h-dvh">
+      <main className="max-w-7xl mx-auto">
         <Outlet />
       </main>
     </>

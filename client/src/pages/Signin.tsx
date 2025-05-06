@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import Button from "../components/ui/Button";
+import Button from "../components/ui/button";
 import Input from "../components/ui/Input";
 import { Link } from "react-router-dom";
 
