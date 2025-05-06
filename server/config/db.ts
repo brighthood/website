@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-exports.Db = mongoose
-  .connect(process.env.LOCAL_MONGODB_URL)
+export const Db = mongoose
+  .connect(process.env.LOCAL_MONGODB_URL!)
   .then(() => {
     console.log("Connected to Database successfully ✅");
   })
