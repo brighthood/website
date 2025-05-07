@@ -23,4 +23,7 @@ Content-Type: application/json
 
 ### getting all users with a cookie
 get http://127.0.0.1:5000/api/v1/users
-# Cookie: jweyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTM2YWM4OWFiODIwZjUwZmY2MWYzMCIsImlhdCI6MTc0NjE3OTcwMH0._v7mH5FnnnvaQTQbzi3HgkQ6cwv1ZGphn1yFvGkpbc4
+
+### getting all users
+
+get http://127.0.0.1:5000/api/v1/users

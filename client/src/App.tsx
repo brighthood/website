@@ -1,34 +1,46 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import { SignIn, SignUp, SignedIn, SignedOut } from "@clerk/clerk-react";
 import Loading from "./components/ui/Loading";
-// import Signup from "./pages/Signup";
-// import Signin from "./pages/Signin";
+import DashbordLayout from "./layout/DashbordLayout"
+import AuthLayout from "./layout/AuthLayout"
 
 const LandingPage = lazy(() => import("./pages/LandingPage"));
 const MainLayout = lazy(() => import("./layout/MainLayout"));
-// const AuthLayout = lazy(() => import("./layout/AuthLayout"));
 
 function App() {
   return (
-    <BrowserRouter>
-      <Suspense fallback={<Loading />}>
-        <Routes>
-          {/* Main Layout with NavBar */}
-          <Route element={<MainLayout />}>
-            <Route path="/" element={<LandingPage />} />
-          </Route>
+    <Suspense fallback={<Loading />}>
+      <Routes>
+        {/* landing page route */}
+        <Route path="/" element={<MainLayout />} >
+          <Route index element={<LandingPage />} />
+        </Route>
+        {/* autentication route */}
+        <Route element={<AuthLayout />}>
+          <Route path="/sign-in" element={<SignIn routing="path" path="/sign-in" />} />
+          <Route path="/sign-up" element={<SignUp routing="path" path="/sign-up" />} />
+        </Route>
+        {/*  dashboard route */}
+        <Route
+          path="/dashboard"
+          element={
+            <>
+              <SignedIn>
+                <DashbordLayout />
+              </SignedIn>
+              <SignedOut>
+                <Route index element={<LandingPage />} />
+              </SignedOut>
+            </>
+          }
+        >
 
-          {/* Auth layout without NavBar */}
-          {/* <Route element={<AuthLayout />}>
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/signin" element={<Signin />} />
-          </Route> */}
+        </Route>
 
-          {/* Catch-all fallback */}
-          <Route path="*" element={<LandingPage />} />
-        </Routes>
-      </Suspense>
-    </BrowserRouter>
+
+      </Routes>
+    </ Suspense >
   );
 }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import { Book, Menu, Sunset, Trees, Zap } from "lucide-react";
+import { useUser } from '@clerk/clerk-react';
 
 import {
   Accordion,
@@ -7,7 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -23,6 +24,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { Link } from "react-router-dom";
 
 interface MenuItem {
   title: string;
@@ -54,7 +56,7 @@ interface Navbar1Props {
 
 const Navbar: React.FC<Navbar1Props> = ({
   logo = {
-    url: "https://www.shadcnblocks.com",
+    url: "/",
     src: "https://shadcnblocks.com/images/block/logos/shadcnblockscom-icon.svg",
     alt: "logo",
     title: "Bright Hood",
@@ -62,107 +64,69 @@ const Navbar: React.FC<Navbar1Props> = ({
   menu = [
     { title: "Home", url: "#" },
     {
-      title: "Products",
-      url: "#",
-      items: [
-        {
-          title: "Blog",
-          description: "The latest industry news, updates, and info",
-          icon: <Book className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Company",
-          description: "Our mission is to innovate and empower the world",
-          icon: <Trees className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Careers",
-          description: "Browse job listing and discover our workspace",
-          icon: <Sunset className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Support",
-          description:
-            "Get in touch with our support team or visit our community forums",
-          icon: <Zap className="size-5 shrink-0" />,
-          url: "#",
-        },
-      ],
+      title: "Why Bright Hood",
+      url: "#Why",
+
     },
     {
-      title: "Resources",
-      url: "#",
-      items: [
-        {
-          title: "Help Center",
-          description: "Get all the answers you need right here",
-          icon: <Zap className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Contact Us",
-          description: "We are here to help you with any questions you have",
-          icon: <Sunset className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Status",
-          description: "Check the current status of our services and APIs",
-          icon: <Trees className="size-5 shrink-0" />,
-          url: "#",
-        },
-        {
-          title: "Terms of Service",
-          description: "Our terms and conditions for using our services",
-          icon: <Book className="size-5 shrink-0" />,
-          url: "#",
-        },
-      ],
+      title: "Courses",
+      url: "#Courses",
     },
     {
-      title: "Pricing",
-      url: "#",
+      title: "Testimonials",
+      url: "#Testimonials",
     },
     {
-      title: "Blog",
-      url: "#",
+      title: "Faqs",
+      url: "#Faqs",
     },
   ],
   auth = {
-    login: { title: "Login", url: "#" },
-    signup: { title: "Sign up", url: "#" },
+    login: { title: "Sign in", url: "/sign-in" },
+    signup: { title: "Get Started", url: "/sign-up" },
   },
 }) => {
+  const { user } = useUser();
+
   return (
     <section className="py-4">
       <div className="container">
         {/* Desktop Menu */}
-        <nav className="hidden justify-between lg:flex">
+        <nav className="hidden justify-evenly items-center lg:flex" >
           <div className="flex items-center gap-6">
-            <a href={logo.url} className="flex items-center gap-2">
+            <Link to={logo.url} className="flex items-center gap-2">
               <img src={logo.src} className="max-h-8" alt={logo.alt} />
-              <span className="text-lg font-semibold tracking-tighter">
+              <span className="text-xl font-semibold tracking-tighter">
                 {logo.title}
               </span>
-            </a>
-            <div className="flex items-center">
-              <NavigationMenu>
-                <NavigationMenuList>
-                  {menu.map((item) => renderMenuItem(item))}
-                </NavigationMenuList>
-              </NavigationMenu>
-            </div>
+            </Link>
+
+          </div>
+          <div className="flex items-center">
+            <NavigationMenu>
+              <NavigationMenuList>
+                {menu.map((item) => renderMenuItem(item))}
+              </NavigationMenuList>
+            </NavigationMenu>
           </div>
           <div className="flex gap-2">
-            <Button asChild variant="outline" size="sm">
-              <a href={auth.login.url}>{auth.login.title}</a>
-            </Button>
-            <Button asChild size="sm">
-              <a href={auth.signup.url}>{auth.signup.title}</a>
-            </Button>
+            {
+              user ? <Button size="default">
+                <Link to="/dashboard">dashboard</Link>
+              </Button>
+                :
+                <>
+                  <Button asChild variant="outline" size="default">
+                    <Link to={auth.login.url}>{auth.login.title}</Link>
+                  </Button>
+                  <Button asChild size="default">
+                    <Link to={auth.signup.url}>{auth.signup.title}</Link>
+                  </Button>
+                </>
+
+
+            }
+
           </div>
         </nav>
 
@@ -181,9 +145,9 @@ const Navbar: React.FC<Navbar1Props> = ({
               <SheetContent className="overflow-y-auto">
                 <SheetHeader>
                   <SheetTitle>
-                    <a href={logo.url} className="flex items-center gap-2">
+                    <Link to={logo.url} className="flex items-center gap-2">
                       <img src={logo.src} className="max-h-8" alt={logo.alt} />
-                    </a>
+                    </Link>
                   </SheetTitle>
                 </SheetHeader>
                 <div className="flex flex-col gap-6 p-4">
@@ -196,10 +160,10 @@ const Navbar: React.FC<Navbar1Props> = ({
                   </Accordion>
                   <div className="flex flex-col gap-3">
                     <Button asChild variant="outline">
-                      <a href={auth.login.url}>{auth.login.title}</a>
+                      <Link to={auth.login.url}>{auth.login.title}</Link>
                     </Button>
                     <Button asChild>
-                      <a href={auth.signup.url}>{auth.signup.title}</a>
+                      <Link to={auth.signup.url}>{auth.signup.title}</Link>
                     </Button>
                   </div>
                 </div>
