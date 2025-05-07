@@ -1,10 +1,11 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
+import React from 'react'
+import { Outlet } from 'react-router-dom'
+
 
 export default function AuthLayout() {
-  return (
-    <div className="flex items-center justify-center min-h-dvh bg-dark-background dark:bg-dark-background ">
-      <Outlet />
-    </div>
-  );
+    return (
+        <div className='flex flex-col justify-center items-center h-screen bg-background'>
+            <Outlet />
+        </div>
+    )
 }

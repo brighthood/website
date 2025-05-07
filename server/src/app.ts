@@ -5,17 +5,19 @@ import authRoute from "../routes/authRoute";
 import { globalErrorcontroller } from "./../controller/errorControllers";
 import AppError from "./../utils/appError";
 import cookieParser from "cookie-parser";
+import { clerkMiddleware } from "@clerk/express";
+
 dotenv.config({ path: ".env" });
 const app = express();
 
 const loggerMiddleware = (req: Request, res: Response, next: NextFunction) => {
   console.log(`Request: ${req.method} ${req.url}`);
-  next(); // Call next to pass control to the next middleware or route handler
+  next();
 };
 
 // Use middleware
 app.use(loggerMiddleware);
-
+app.use(clerkMiddleware());
 app.use(express.static("./../client/dist"));
 app.use(express.json());
 app.use(cookieParser());

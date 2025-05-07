@@ -3,7 +3,13 @@
  * @type {import('tailwindcss').Config}
  */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@clerk/**/*.{js,ts,jsx,tsx}", // ✅ Include Clerk
+  ],
   darkMode: ["class", "class"], //enable dark mode
   theme: {
     extend: {

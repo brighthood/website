@@ -19,7 +19,7 @@ interface Feature43Props {
 }
 
 const Benefit = ({
-  heading = "Why Work With Us?",
+  heading = "What you Will Benefit from Us?",
   reasons = [
     {
       title: "Quality",

@@ -25,7 +25,7 @@ const WhatYouBuild = () => {
           <div className="flex flex-col overflow-clip rounded-xl border border-border md:col-span-2 md:grid md:grid-cols-2 md:gap-6 lg:gap-8">
             <div className="md:min-h-[24rem] lg:min-h-[28rem] xl:min-h-[32rem]">
               <img
-                src="https://shadcnblocks.com/images/block/placeholder-1.svg"
+                src="/images/image23.jpg"
                 alt="Feature 1"
                 className="aspect-[16/9] h-full w-full object-cover object-center"
               />
@@ -52,7 +52,7 @@ const WhatYouBuild = () => {
             </div>
             <div className="md:min-h-[24rem] lg:min-h-[28rem] xl:min-h-[32rem]">
               <img
-                src="https://shadcnblocks.com/images/block/placeholder-2.svg"
+                src="/images/image23.jpg"
                 alt="Feature 2"
                 className="aspect-[16/9] h-full w-full object-cover object-center"
               />
