@@ -89,26 +89,28 @@ const Navbar: React.FC<Navbar1Props> = ({
   const { user } = useUser();
 
   return (
-    <section className="py-4">
+    <section className="py-4 max-w-7xl mx-auto">
       <div className="container">
         {/* Desktop Menu */}
         <nav className="hidden justify-evenly items-center lg:flex" >
           <div className="flex items-center gap-6">
             <Link to={logo.url} className="flex items-center gap-2">
               <img src={logo.src} className="max-h-8" alt={logo.alt} />
-              <span className="text-xl font-semibold tracking-tighter">
+              <span className="text-2xl font-bold tracking-tighter">
                 {logo.title}
               </span>
             </Link>
 
           </div>
-          <div className="flex items-center">
+
+          <div className="flex items-center ">
             <NavigationMenu>
               <NavigationMenuList>
                 {menu.map((item) => renderMenuItem(item))}
               </NavigationMenuList>
             </NavigationMenu>
           </div>
+
           <div className="flex gap-2">
             {
               user ? <Button size="default">
@@ -123,22 +125,21 @@ const Navbar: React.FC<Navbar1Props> = ({
                     <Link to={auth.signup.url}>{auth.signup.title}</Link>
                   </Button>
                 </>
-
-
             }
-
           </div>
+
+
         </nav>
 
         {/* Mobile Menu */}
         <div className="block lg:hidden">
           <div className="flex items-center justify-between">
-            <a href={logo.url} className="flex items-center gap-2">
+            <Link to={logo.url} className="flex items-center gap-2">
               <img src={logo.src} className="max-h-8" alt={logo.alt} />
-            </a>
+            </Link>
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
+                <Button variant="outline" size="lg">
                   <Menu className="size-4" />
                 </Button>
               </SheetTrigger>
@@ -181,13 +182,13 @@ const renderMenuItem = (item: MenuItem) => {
     return (
       <NavigationMenuItem key={item.title}>
         <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
-        <NavigationMenuContent className="bg-popover text-popover-foreground">
+        {/* <NavigationMenuContent className="bg-popover text-popover-foreground">
           {item.items.map((subItem) => (
             <NavigationMenuLink asChild key={subItem.title} className="w-80">
               <SubMenuLink item={subItem} />
             </NavigationMenuLink>
           ))}
-        </NavigationMenuContent>
+        </NavigationMenuContent> */}
       </NavigationMenuItem>
     );
   }
