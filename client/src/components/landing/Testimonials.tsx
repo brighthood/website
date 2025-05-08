@@ -2,7 +2,7 @@ import { Star } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselApi,
@@ -54,7 +54,7 @@ const Testimonial = () => {
   }, [api]);
 
   return (
-    <section className="py-32">
+    <section className="py-16">
       <Carousel setApi={setApi}>
         <CarouselContent>
           {testimonials.map((testimonial) => (

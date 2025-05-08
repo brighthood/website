@@ -14,7 +14,7 @@ interface FaqItem {
 
 }
 
-interface Faq3Props {
+interface FaqProps {
   heading: string;
   description: string;
   items?: FaqItem[];
@@ -68,6 +68,7 @@ const faqItems = [
   },
 ];
 
+
 const Faq = ({
   heading = "Frequently asked questions",
   description = "Find answers to common questions about our products. Can't find what you're looking for? Contact our support team.",
@@ -76,15 +77,15 @@ const Faq = ({
   supportDescription = "Our dedicated support team is here to help you with any questions or concerns. Get in touch with us for personalized assistance.",
   supportButtonText = "Contact Support",
   supportButtonUrl = "https://www.shadcnblocks.com",
-}: Faq3Props) => {
+}: FaqProps) => {
   return (
-    <section className="py-32">
+    <section className="py-16">
       <div className="container space-y-16">
         <div className="mx-auto flex max-w-3xl flex-col text-left md:text-center">
           <h2 className="mb-3 text-3xl font-semibold md:mb-4 lg:mb-6 lg:text-4xl">
-            {heading}
+            Frequently asked questions
           </h2>
-          <p className="text-muted-foreground lg:text-lg">{description}</p>
+          <p className="text-muted-foreground lg:text-lg">Find answers to common questions about our products. Can't find what you're looking for? Contact our support team.</p>
         </div>
         <Accordion
           type="single"
@@ -122,15 +123,15 @@ const Faq = ({
             </Avatar>
           </div>
           <h3 className="mb-2 max-w-3xl font-semibold lg:text-lg">
-            {supportHeading}
+            Need more support?
           </h3>
           <p className="mb-8 max-w-3xl text-muted-foreground lg:text-lg">
-            {supportDescription}
+            Our dedicated support team is here to help you with any questions or concerns. Get in touch with us for personalized assistance.
           </p>
           <div className="flex w-full flex-col justify-center gap-2 sm:flex-row">
             <Button className="w-full sm:w-auto" asChild>
               <a href={supportButtonUrl} target="_blank">
-                {supportButtonText}
+                Contact Support
               </a>
             </Button>
           </div>

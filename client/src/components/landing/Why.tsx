@@ -24,31 +24,31 @@ const why = [
   },
   {
     "title": "Career Growth",
-    "icon": "Briefcase",
+    "icon": "GitBranch",
     "description": "Stand out in a competitive job market with real-world tech skills and hands-on project experience.",
     "image": "/images/freedom.jpg"
   },
   {
     "title": "Problem Solving",
-    "icon": "BrainCircuit",
+    "icon": "List",
     "description": "Learn how to think like a developer and solve complex problems with structured logic and code.",
     "image": "/images/Creativity.jpg"
   },
   {
     "title": "Community",
-    "icon": "Users",
+    "icon": "Play",
     "description": "Join a community of learners and mentors who grow together and support each other’s journey.",
     "image": "/images/dream.jpg"
   },
   {
     "title": "Innovation Power",
-    "icon": "Lightbulb",
+    "icon": "Sparkles",
     "description": "Empower yourself to turn ideas into reality — whether it's a startup, automation, or a new product.",
     "image": "/images/Technology.jpg"
   },
   {
     "title": "Future-Ready Skills",
-    "icon": "Rocket",
+    "icon": "WandSparkles",
     "description": "Stay ahead of the curve by learning in-demand technologies shaping the future of work and society.",
     "image": "https://images.unsplash.com/photo-1605379399843-5870eea9b74e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fGNvZGluZ3xlbnwwfHwwfHx8MA%3D%3D"
   }
@@ -57,20 +57,25 @@ const why = [
 
 const Why = () => {
   return (
-    <section className="py-32">
+    <section className="py-10">
       <div className="container">
         <div className="mx-auto flex max-w-5xl flex-col items-center gap-6 text-center">
           <h1 className="mb-6 text-4xl font-semibold text-pretty lg:text-5xl">
             Why Do You Need This Course?
           </h1>
 
-          <div className="mt-10 grid grid-cols-1 place-items-center gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid grid-cols-1  place-items-center gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {
               why.map((el) => {
                 return (
-                  <Card key={el.title}>
+                  <Card key={el.title} className="bg-card p-2">
                     <CardHeader className="pb-1">
-                      <Code className="size-4" strokeWidth={1} />
+
+                      <img
+                        className="h-40 w-full rounded-tl-md object-cover object-center"
+                        src={el.image}
+                        alt="placeholder"
+                      />
                     </CardHeader>
                     <CardContent className="text-left">
                       <h2 className="mb-1 text-lg font-semibold">{el.title}</h2>
@@ -79,11 +84,7 @@ const Why = () => {
                       </p>
                     </CardContent>
                     <CardFooter className="justify-end pr-0 pb-0">
-                      <img
-                        className="h-40 w-full rounded-tl-md object-cover object-center"
-                        src={el.image}
-                        alt="placeholder"
-                      />
+                      <Code className="size-4" strokeWidth={1} />
                     </CardFooter>
                   </Card>
                 );
