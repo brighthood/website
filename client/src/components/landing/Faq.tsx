@@ -27,46 +27,48 @@ interface FaqProps {
 const faqItems = [
   {
     id: "faq-1",
-    question: "What is the return policy?",
+    question: "How do I get started with your service?",
     answer:
-      "You can return any item within 30 days of purchase for a full refund, provided it is in its original condition.",
+      "Simply sign up for a free account, choose your plan, and follow the onboarding steps to start using our platform immediately.",
   },
   {
     id: "faq-2",
-    question: "How do I track my order?",
+    question: "Is there a free trial available?",
     answer:
-      "Once your order is shipped, you will receive an email with a tracking number. You can use this number on our website to track your order.",
+      "Yes, we offer a 14-day free trial for all our premium features. No credit card is required to get started.",
   },
   {
     id: "faq-3",
-    question: "Do you offer international shipping?",
+    question: "Can I cancel my subscription at any time?",
     answer:
-      "Yes, we ship to most countries worldwide. Shipping costs and delivery times vary depending on the destination.",
+      "Absolutely. You can cancel your subscription at any time from your account settings. There are no cancellation fees.",
   },
   {
     id: "faq-4",
-    question: "Can I change my order after it has been placed?",
+    question: "Is my data secure?",
     answer:
-      "You can change your order within 24 hours of placing it by contacting our customer service team.",
+      "Yes, we use industry-standard encryption and security practices to ensure your data is safe and protected at all times.",
   },
   {
     id: "faq-5",
-    question: "What payment methods do you accept?",
-    answer: "We accept all major credit cards, PayPal, and Apple Pay.",
+    question: "Do you offer team or enterprise plans?",
+    answer:
+      "Yes, we offer team plans and custom enterprise solutions. Please contact our sales team for more details.",
   },
   {
     id: "faq-6",
-    question: "How can I contact customer support?",
+    question: "How can I contact technical support?",
     answer:
-      "You can reach our customer support team via email at support@example.com or by calling 1-800-123-4567.",
+      "You can reach our support team via live chat, email at support@example.com, or through our support center 24/7.",
   },
   {
     id: "faq-7",
-    question: "Are there any discounts for bulk purchases?",
+    question: "Can I integrate your service with other tools?",
     answer:
-      "Yes, we offer discounts for bulk purchases. Please contact our sales team for more information.",
+      "Yes, we support integrations with popular tools like Slack, Zapier, Notion, and more. Visit our integrations page for details.",
   },
 ];
+
 
 
 const Faq = ({

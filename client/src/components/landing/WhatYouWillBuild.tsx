@@ -35,7 +35,7 @@ export default function WhatYouWillBuild() {
           What You'll Build With Us
         </h2>
 
-        <div className="flex flex-col gap-16">
+        <div className="flex flex-col gap-10">
           {categories.map((cat, index) => (
             <div
               key={index}
@@ -55,7 +55,7 @@ export default function WhatYouWillBuild() {
                   title={cat.title}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
-                  className="w-full h-full rounded-lg"
+                  className="w-full  rounded-lg"
                 ></iframe>
               </div>
             </div>

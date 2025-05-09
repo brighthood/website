@@ -1,4 +1,7 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "../ui/button";
+
 interface catagorie {
   title: string,
   description: string,
@@ -40,18 +43,21 @@ const WhatYouBuild = () => {
           <h2 className="mb-3 text-xl font-semibold md:mb-4 md:text-4xl lg:mb-6">
             What You'll Build With Us
           </h2>
-          <p className="mb-8 text-muted-foreground lg:text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig
-            doloremque mollitia fugiat omnis! Porro facilis quo animi
-            consequatur. Explicabo.
-          </p>
-          <a
-            href="#"
+          <Link
+            to="#"
             className="group flex items-center text-xs font-medium md:text-base lg:text-lg"
           >
-            Book a demo{" "}
-            <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
-          </a>
+            <Button size="lg">
+              Get Started
+              <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
+            </ Button>
+          </Link>
+          <p className="text-muted-foreground lg:text-lg">
+            Our curriculum is designed to take you from zero to hero in tech. With hands-on projects, you'll gain the skills and confidence to tackle real-world challenges.
+            Whether you're interested in web development, mobile apps, or AI, we've got you covered. Our courses are tailored to meet the needs of beginners and aspiring developers alike.
+            Join us and start building your future today!
+          </p>
+
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
 
@@ -86,7 +92,7 @@ const WhatYouBuild = () => {
 
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 
