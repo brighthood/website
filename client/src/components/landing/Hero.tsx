@@ -1,7 +1,6 @@
 import { ChevronRight } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
-import video from "./../../assets/coding.mp4"
+import video from "./../../assets/coding.mp4";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
@@ -12,20 +11,18 @@ const Hero = () => {
           <div className="mx-auto flex max-w-4xl flex-col items-center">
             <div className="z-10 items-center text-center">
               <h1 className="mb-8 text-4xl font-semibold text-pretty lg:text-7xl bg-gradient-to-b from-background to-foreground bg-clip-text text-transparent">
-                Grow with Bright Hood
+                Empower Your Future with Tech
               </h1>
               <p className="mx-auto max-w-screen-md text-muted-foreground lg:text-lg">
-                Start your tech journey with confidence. Our mission is to make world-class tech education accessible, practical, and empowering for everyone. Learn the skills that power the future — from web and mobile development to full-stack projects — with hands-on guidance, real projects, and a supportive community behind you
+                At Bright Hood, we believe tech education should be a right — not a privilege. That’s why we’re building a movement to equip underserved communities with the tools, training, and confidence to thrive in the digital age. Learn practical, job-ready skills through real projects, mentorship, and a supportive network that believes in your potential.
               </p>
-              <div className="mt-12 flex w-full flex-col  justify-center gap-2 sm:flex-row">
+              <div className="mt-12 flex w-full flex-col justify-center gap-2 sm:flex-row">
                 <Link to="/auth/sign-up">
-                  <Button size="lg" >
-
+                  <Button size="lg">
                     Get started now
                     <ChevronRight className="ml-2 h-4" />
                   </Button>
                 </Link>
-
               </div>
             </div>
           </div>
@@ -44,6 +41,5 @@ const Hero = () => {
     </section>
   );
 };
-
 
 export { Hero };

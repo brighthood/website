@@ -1,10 +1,10 @@
 import {
   BatteryCharging,
-  GitPullRequest,
-  Layers,
-  RadioTower,
-  SquareKanban,
-  WandSparkles,
+  GitGraph,
+  Layers3,
+  RadioReceiver,
+  LayoutDashboard,
+  Sparkles,
 } from "lucide-react";
 
 interface Reason {
@@ -19,42 +19,42 @@ interface Feature43Props {
 }
 
 const Benefit = ({
-  heading = "What you Will Benefit from Us?",
+  heading = "What You Will Benefit from Us",
   reasons = [
     {
-      title: "Quality",
+      title: "Hands-On Learning",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe est aliquid exercitationem, quos explicabo repellat?",
-      icon: <GitPullRequest className="size-6" />,
+        "Master skills by building real-world projects, not just watching tutorials. Apply your knowledge in practical scenarios.",
+      icon: <LayoutDashboard className="size-6" />,
     },
     {
-      title: "Experience",
+      title: "Industry-Relevant Curriculum",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe est aliquid exercitationem, quos explicabo repellat?",
-      icon: <SquareKanban className="size-6" />,
+        "Stay ahead with content that's designed around the latest tools, frameworks, and employer demands.",
+      icon: <GitGraph className="size-6" />,
     },
     {
-      title: "Support",
+      title: "Personalized Mentorship",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe est aliquid exercitationem, quos explicabo repellat?",
-      icon: <RadioTower className="size-6" />,
+        "Get guidance from experienced developers and mentors who will help you grow faster and avoid common pitfalls.",
+      icon: <RadioReceiver className="size-6" />,
     },
     {
-      title: "Innovation",
+      title: "Cutting-Edge Tools",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe est aliquid exercitationem, quos explicabo repellat?",
-      icon: <WandSparkles className="size-6" />,
+        "Learn with modern tech stacks and workflows including Git, Docker, CI/CD, and cloud platforms.",
+      icon: <Layers3 className="size-6" />,
     },
     {
-      title: "Results",
+      title: "Job-Ready Portfolio",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe est aliquid exercitationem, quos explicabo repellat?",
-      icon: <Layers className="size-6" />,
+        "Graduate with a polished portfolio of projects that showcase your skills to recruiters and hiring managers.",
+      icon: <Sparkles className="size-6" />,
     },
     {
-      title: "Efficiency",
+      title: "Career Support",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe est aliquid exercitationem, quos explicabo repellat?",
+        "Access resume reviews, interview prep, and networking opportunities to help you land your dream role.",
       icon: <BatteryCharging className="size-6" />,
     },
   ],

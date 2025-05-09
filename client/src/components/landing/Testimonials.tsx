@@ -13,26 +13,27 @@ import {
 const testimonials = [
   {
     id: "testimonial-1",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia fugiat omnis! Porro facilis quo animi consequatur. Explicabo.",
-    name: "Customer Name",
-    role: "Position at Company",
+    text: "This platform helped me land my first developer job. The projects were real-world, the mentorship was top-tier, and the experience was game-changing.",
+    name: "Sarah Johnson",
+    role: "Frontend Developer at TechNova",
     avatar: "https://shadcnblocks.com/images/block/avatar-1.webp",
   },
   {
     id: "testimonial-2",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia fugiat omnis! Porro facilis quo animi consequatur. Explicabo.",
-    name: "Customer Name",
-    role: "Position at Company",
+    text: "I've taken several courses before, but nothing came close to the structure and guidance I received here. It’s perfect for career switchers.",
+    name: "James Lee",
+    role: "Software Engineer at DevSphere",
     avatar: "https://shadcnblocks.com/images/block/avatar-2.webp",
   },
   {
     id: "testimonial-3",
-    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Elig doloremque mollitia fugiat omnis! Porro facilis quo animi consequatur. Explicabo.",
-    name: "Customer Name",
-    role: "Position at Company",
+    text: "The community, the hands-on approach, and the constant updates to modern tech stacks made it easy to stay current and relevant in my field.",
+    name: "Amina Rahman",
+    role: "Full-Stack Engineer at CloudCore",
     avatar: "https://shadcnblocks.com/images/block/avatar-3.webp",
   },
 ];
+
 
 const Testimonial = () => {
   const [api, setApi] = useState<CarouselApi>();
